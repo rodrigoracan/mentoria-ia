@@ -409,8 +409,23 @@ var VIDEO_ID = "MhbC4MFh9pg";            // ID do vídeo não listado do YouTube
 (function(){
   if (VIDEO_ID) {
     var v = document.getElementById('video');
-    v.style.padding = '0'; v.style.border = '0'; v.style.background = '#000';
-    v.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(VIDEO_ID) + '?rel=0" title="Vídeo de apresentação da mentoria" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+    var id = encodeURIComponent(VIDEO_ID);
+    v.style.padding = '0'; v.style.border = '0'; v.style.background = '#000'; v.style.overflow = 'hidden'; v.style.position = 'relative';
+    v.innerHTML = '<button type="button" id="videoPlay" aria-label="Reproduzir o vídeo de apresentação" style="position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:#071A3F center/cover no-repeat;display:flex;align-items:center;justify-content:center">'
+      + '<span style="position:absolute;inset:0;background:rgba(7,26,63,0.35)"></span>'
+      + '<span style="position:relative;width:clamp(84px,12vw,132px);height:clamp(84px,12vw,132px);border-radius:50%;background:#FFC629;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 36px rgba(0,0,0,0.45)">'
+      + '<svg aria-hidden="true" width="46%" height="46%" viewBox="0 0 24 24" fill="#071A3F"><path d="M8 5v14l11-7z"></path></svg></span></button>';
+    var btn = document.getElementById('videoPlay');
+    var thumb = new Image();
+    thumb.onload = function(){
+      // o YouTube devolve uma imagem 120x90 quando a capa em alta não existe
+      if (thumb.naturalWidth <= 120 && thumb.src.indexOf('maxresdefault') > -1) { thumb.src = 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg'; return; }
+      btn.style.backgroundImage = 'url(' + thumb.src + ')';
+    };
+    thumb.src = 'https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg';
+    btn.addEventListener('click', function(){
+      v.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&controls=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3" title="Vídeo de apresentação da mentoria" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+    });
   }
 })();
 </script>
