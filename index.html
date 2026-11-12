@@ -31,7 +31,6 @@ summary::-webkit-details-marker{display:none}
 <nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px">
 <a href="#metodo" style="color: #D5DFF5; text-decoration: none; font-size: 15px; font-weight: 500; padding: 12px 0">Método</a>
 <a href="#sobre" style="color: #D5DFF5; text-decoration: none; font-size: 15px; font-weight: 500; padding: 12px 0">Quem é o mentor</a>
-<a href="#planos" style="color: #D5DFF5; text-decoration: none; font-size: 15px; font-weight: 500; padding: 12px 0">Planos</a>
 <a href="#aplicar" style="background: #FFC629; color: #071A3F; text-decoration: none; font-size: 15px; font-weight: 700; padding: 13px 22px; border-radius: 8px">Quero meu diagnóstico</a>
 </nav>
 </div>
@@ -48,7 +47,6 @@ summary::-webkit-details-marker{display:none}
 </div>
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px">
 <a href="#aplicar" style="background: #FFC629; color: #071A3F; text-decoration: none; font-size: 17px; font-weight: 700; padding: 18px 30px; border-radius: 10px">Quero meu diagnóstico</a>
-<a href="#planos" style="color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600; padding: 17px 24px; border: 1px solid #4A629A; border-radius: 10px">Ver planos e valores</a>
 </div>
 <div style="font-size: 14px; color: #B4C3E4">Garantia de 7 dias com devolução integral. Sem burocracia.</div>
 </div>
@@ -173,7 +171,7 @@ summary::-webkit-details-marker{display:none}
 <div style="font-family: Archivo, Inter, sans-serif; font-weight: 700; font-size: 22px">Acompanhamento</div>
 <div style="display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.55; color: #44506B">
 <div>Reuniões quinzenais por Zoom</div>
-<div>Encontros individuais com o mentor, conforme o plano</div>
+<div>Encontros individuais com o mentor</div>
 <div>Sessões em grupo com outros empresários</div>
 </div>
 </div>
@@ -333,47 +331,11 @@ summary::-webkit-details-marker{display:none}
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding: 22px 0; border-bottom: 1px solid #D4DCEC">
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <div style="font-size: 18px; font-weight: 600; line-height: 1.45">Segunda Cadeira</div>
-<div style="font-size: 15px; line-height: 1.55; color: #44506B">Acesso completo para um sócio ou membro da equipe do mesmo projeto. No Plano Business, vale para até 5 colaboradores.</div>
+<div style="font-size: 15px; line-height: 1.55; color: #44506B">Acesso completo para um sócio ou membro da equipe do mesmo projeto.</div>
 </div>
 <div style="font-family: Archivo, Inter, sans-serif; font-weight: 700; font-size: 18px; color: #034AAD">R$ 8.000</div>
 </div>
 </div>
-</div>
-</section>
-
-<!-- PLANOS -->
-<section id="planos" style="background: #F3F6FC; padding: clamp(56px, 8vw, 112px) clamp(20px, 5vw, 80px)">
-<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
-<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #034AAD">Planos e valores</div>
-<h2 style="margin: 0; font-family: Archivo, Inter, sans-serif; font-weight: 800; font-size: clamp(30px, 3.8vw, 46px); line-height: 1.1; letter-spacing: -0.015em">Escolha o nível de proximidade que o seu momento pede.</h2>
-<p style="margin: 0; font-size: 18px; line-height: 1.65; color: #44506B"><span id="planNote"></span></p>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 8px; background: #FFFFFF; border-radius: 12px; padding: 6px; align-self: flex-start">
-<button type="button" id="btnPro" style="border: 0; cursor: pointer; font-family: Inter, sans-serif; font-size: 16px; font-weight: 700; padding: 13px 24px; border-radius: 8px">Profissional · 1 participante</button>
-<button type="button" id="btnBiz" style="border: 0; cursor: pointer; font-family: Inter, sans-serif; font-size: 16px; font-weight: 700; padding: 13px 24px; border-radius: 8px">Business · até 5 colaboradores</button>
-</div>
-<div id="plans" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
-<template id="planTpl">
-<div style="flex: 1 1 250px; min-width: 0; background: #FFFFFF; border: 2px solid {{plan.border}}; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 18px">
-<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px">
-<div style="font-family: Archivo, Inter, sans-serif; font-weight: 800; font-size: 24px">{{plan.name}}</div>
-<sc-if value="{{plan.featured}}" hint-placeholder-val="{{ false }}">
-<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: #034AAD; color: #FFFFFF; padding: 6px 10px; border-radius: 999px">Recomendado</div>
-</sc-if>
-</div>
-<div style="font-size: 16px; font-weight: 700; line-height: 1.4; color: #034AAD">{{plan.includes}}</div>
-<div style="font-size: 15px; line-height: 1.55; color: #44506B; flex-grow: 1">{{plan.desc}}</div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<div style="font-size: 15px; color: #5A6785; text-decoration: line-through">de {{plan.full}}</div>
-<div style="font-family: Archivo, Inter, sans-serif; font-weight: 800; font-size: 34px; line-height: 1.05">{{plan.promo}}</div>
-<div style="font-size: 14px; color: #44506B">20% OFF · Pix ou cartão em até 6x</div>
-</div>
-<a href="#aplicar" style="text-align: center; background: #FFC629; color: #071A3F; text-decoration: none; font-size: 16px; font-weight: 700; padding: 15px 18px; border-radius: 10px">Quero este plano</a>
-</div>
-</template>
-</div>
-<div style="font-size: 15px; line-height: 1.6; color: #44506B">Pagamento por Pix ou cartão de crédito (todas as bandeiras). Parcelamento em até 6x com juros; condições em até 12x sob negociação. Não trabalhamos com boleto nem recorrência mensal.</div>
 </div>
 </section>
 
@@ -409,10 +371,6 @@ summary::-webkit-details-marker{display:none}
 <div style="font-size: 16px; line-height: 1.65; color: #44506B; padding: 0 0 24px">O ciclo dura 6 meses e é desenhado para mostrar resultados visíveis a partir dos primeiros 30 dias, começando pelos ajustes que o diagnóstico apontar como mais urgentes.</div>
 </details>
 <details style="background: #F3F6FC; border-radius: 12px; padding: 0 24px">
-<summary style="font-size: 18px; font-weight: 700; padding: 22px 0; min-height: 44px">Qual a diferença entre o Plano Profissional e o Business?</summary>
-<div style="font-size: 16px; line-height: 1.65; color: #44506B; padding: 0 0 24px">O Profissional foca no gestor ou em um membro-chave da equipe. O Business envolve até 5 colaboradores na implementação, para que toda a equipe-chave aplique a metodologia de forma integrada.</div>
-</details>
-<details style="background: #F3F6FC; border-radius: 12px; padding: 0 24px">
 <summary style="font-size: 18px; font-weight: 700; padding: 22px 0; min-height: 44px">E depois dos 6 meses?</summary>
 <div style="font-size: 16px; line-height: 1.65; color: #44506B; padding: 0 0 24px">Você pode renovar o ciclo para expandir e aprofundar a implementação, se fizer sentido para o momento da empresa.</div>
 </details>
@@ -424,9 +382,9 @@ summary::-webkit-details-marker{display:none}
 <section id="aplicar" style="background: #071A3F; color: #FFFFFF; padding: clamp(64px, 9vw, 128px) clamp(20px, 5vw, 80px)">
 <div style="max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 28px; text-align: center">
 <h2 style="margin: 0; font-family: Archivo, Inter, sans-serif; font-weight: 800; font-size: clamp(32px, 4.6vw, 56px); line-height: 1.06; letter-spacing: -0.02em">Descubra onde a sua empresa está perdendo dinheiro. E o que a IA pode fazer a respeito.</h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #D5DFF5; max-width: 640px">Fale com a equipe, conte o momento do seu negócio e saia da conversa sabendo qual plano faz sentido. Você tem 7 dias de garantia para decidir sem risco.</p>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #D5DFF5; max-width: 640px">Fale com a equipe, conte o momento do seu negócio e saia da conversa sabendo qual formato faz sentido para a sua empresa. Você tem 7 dias de garantia para decidir sem risco.</p>
 <a href="https://wa.me/55SEUNUMERO" style="background: #FFC629; color: #071A3F; text-decoration: none; font-size: 19px; font-weight: 700; padding: 20px 36px; border-radius: 12px">Quero meu diagnóstico</a>
-<div style="font-size: 14px; color: #B4C3E4">Pix ou cartão em até 6x · Reembolso integral em 7 dias</div>
+<div style="font-size: 14px; color: #B4C3E4">Reembolso integral em 7 dias, sem burocracia</div>
 </div>
 </section>
 
@@ -450,32 +408,6 @@ var VIDEO_ID = "MhbC4MFh9pg";            // ID do vídeo não listado do YouTube
     v.style.padding = '0'; v.style.border = '0'; v.style.background = '#000';
     v.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(VIDEO_ID) + '?rel=0" title="Vídeo de apresentação da mentoria" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
   }
-  var base = [
-    {name:'Essencial', full:8000, includes:'1 encontro individual + acompanhamento em grupo', desc:'Para quem quer iniciar a implementação de IA com suporte e orientação coletiva.', featured:false},
-    {name:'Avançado', full:12000, includes:'7 encontros individuais + acompanhamento em grupo', desc:'Maior proximidade e exclusividade, com acompanhamento constante ao longo do ciclo.', featured:true},
-    {name:'Executivo', full:18000, includes:'2 encontros individuais + grupo exclusivo de implementação no WhatsApp', desc:'Atendimento individualizado e respostas rápidas durante a implementação.', featured:false},
-    {name:'Elite', full:25000, includes:'7 encontros individuais + acompanhamento premium', desc:'Máxima personalização e foco total. Os encontros não são cumulativos.', featured:false}
-  ];
-  var fmt = function(n){ return 'R$ ' + n.toLocaleString('pt-BR'); };
-  var tpl = document.getElementById('planTpl').innerHTML;
-  var box = document.getElementById('plans'), note = document.getElementById('planNote');
-  var bPro = document.getElementById('btnPro'), bBiz = document.getElementById('btnBiz');
-  function paint(b, on){ b.style.background = on ? '#071A3F' : 'transparent'; b.style.color = on ? '#FFFFFF' : '#0B1B3A'; b.setAttribute('aria-pressed', on ? 'true' : 'false'); }
-  function render(biz){
-    var out = '';
-    base.forEach(function(p){
-      var full = p.full * (biz ? 2 : 1);
-      var d = {name:p.name, includes:p.includes, desc:p.desc, full:fmt(full), promo:fmt(full*0.8), border:p.featured ? '#034AAD' : '#D4DCEC'};
-      out += tpl.replace(/<sc-if[^>]*>([\s\S]*?)<\/sc-if>/g, p.featured ? '$1' : '').replace(/\{\{plan\.(\w+)\}\}/g, function(_, k){ return d[k]; });
-    });
-    Array.prototype.slice.call(box.children).forEach(function(c){ if (c.tagName !== 'TEMPLATE') box.removeChild(c); });
-    box.insertAdjacentHTML('beforeend', out);
-    note.textContent = biz ? 'Plano Business: até 5 colaboradores participam da implementação, para que toda a equipe-chave entenda e aplique a metodologia de forma integrada.' : 'Plano Profissional: acompanhamento individualizado com foco direto no gestor ou em um membro-chave da equipe.';
-    paint(bPro, !biz); paint(bBiz, biz);
-  }
-  bPro.addEventListener('click', function(){ render(false); });
-  bBiz.addEventListener('click', function(){ render(true); });
-  render(false);
 })();
 </script>
 </body>
