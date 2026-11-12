@@ -1,0 +1,9 @@
+Landing page — Mentoria de IA para Negócios | Rodrigo Racan
+
+Antes de publicar, edite o index.html:
+1. Vídeo: procure  var VIDEO_ID = "";  e coloque o ID do vídeo não listado
+   (em https://www.youtube.com/watch?v=ABC123 o ID é ABC123).
+2. WhatsApp: troque  wa.me/55SEUNUMERO  pelo seu número com DDD.
+3. Preencha os textos entre [COLCHETES]: depoimentos, resultados, CNPJ e e-mail.
+
+Arquivos: index.html + pasta img/ (logo branco, logo azul, foto).
